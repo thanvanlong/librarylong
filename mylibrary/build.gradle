@@ -1,8 +1,10 @@
 plugins {
     id 'com.android.library'
     id 'maven-publish'
+    id 'kotlin-android'
 }
-
+group = 'com.github.jitpack'
+version = '1.0'
 
 android {
     namespace 'com.viettel.mylibrary'
@@ -29,6 +31,9 @@ android {
     buildFeatures {
         compose true
     }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
 }
 
 dependencies {
@@ -45,11 +50,11 @@ afterEvaluate {
     publishing {
         publications {
             release(MavenPublication) {
+                from components.release
                 groupId = 'com.github.thanvanlong'
                 artifactId = 'mylibrary'
                 version = '1.0'
 
-//                from components.release
             }
         }
     }
