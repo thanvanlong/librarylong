@@ -49,7 +49,7 @@ afterEvaluate {
                 artifactId = 'mylibrary'
                 version = '1.0'
 
-                from components.release
+//                from components.release
             }
         }
     }
